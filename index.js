@@ -17,7 +17,7 @@ server.post('/getMovies',function (request,response)  {
             req.query({
                 "page": "1",
                 "language": "en-US",
-                "api_key": ""
+                "api_key": "3b4419b59edd5853e4186bc447541b0e"
             });
             req.send("{}");
             req.end(function(res) {
