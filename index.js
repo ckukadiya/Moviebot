@@ -173,21 +173,12 @@ server.post('/getMovies', function (request, response) {
                     }
                 }*/
                     {
-                        "slack": [
-                            {
-                                "type": "section",
-                                "text": {
-                                    "type": "mrkdwn",
-                                    "text": "Take a look at this image."
-                                },
-                                "accessory": {
-                                    "type": "image",
-                                    "image_url": "https://api.slack.com/img/blocks/bkb_template_images/palmtree.png",
-                                    "alt_text": "palm tree"
-                                }
+                        "payload": {
+                            "slack": {
+                                "text": "This is a mrkdwn section block :ghost: *this is bold*, and ~this is crossed out~, and <https://google.com|this is a link>"
                             }
-                        ]
 
+                        }
                     }));
             }
         });
