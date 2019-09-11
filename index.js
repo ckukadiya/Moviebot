@@ -11,7 +11,7 @@ var port = process.env.PORT || 8080;
 // create serve and configure it.
 const server = express();
 server.use(bodyParser.json());
-server.post('/getMovies',function (request,response)  {
+server.post('/getMovies', function (request, response) {
     console.log(request);
     if (request.body && request.body.result) {
         if (request.body.result.parameters['top-rated']) {
@@ -136,7 +136,7 @@ server.post('/getMovies',function (request,response)  {
                 response.send(JSON.stringify(/*{
                     "speech": output,
                     "displayText": output
-                }*/{
+                }*//*{
                     "payload": {
                         "google": {
                             "expectUserResponse": true,
@@ -171,12 +171,29 @@ server.post('/getMovies',function (request,response)  {
                             }
                         }
                     }
-                }));
+                }*/
+                    {
+                        "slack": [
+                            {
+                                "type": "section",
+                                "text": {
+                                    "type": "mrkdwn",
+                                    "text": "Take a look at this image."
+                                },
+                                "accessory": {
+                                    "type": "image",
+                                    "image_url": "https://api.slack.com/img/blocks/bkb_template_images/palmtree.png",
+                                    "alt_text": "palm tree"
+                                }
+                            }
+                        ]
+
+                    }));
             }
         });
     }
 });
-server.get('/getName',function (req,res){
+server.get('/getName', function (req, res) {
     res.send('Swarup Bam');
 });
 server.listen(port, function () {
