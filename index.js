@@ -175,7 +175,7 @@ server.post('/getMovies', function (request, response) {
                     {
                         "payload": {
                             "slack": {
-                                "text": "This is a mrkdwn section block :ghost: *this is bold*, and ~this is crossed out~, and <https://google.com|this is a link>"
+                                "text": "Wha chintan Wha This is a mrkdwn section block :ghost: *this is bold*, and ~this is crossed out~, and <https://google.com|this is a link>"
                             }
 
                         }
